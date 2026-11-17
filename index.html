@@ -1,128 +1,632 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HUNANIMA - Machines Agricoles Simples</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KELLY88 LOGISTICS LLC | Freight Coordination, Transportation &amp; Supply Chain Support</title>
+  <meta name="description" content="Private independent freight logistics, transportation support, and supply chain coordination in Conyers, Georgia." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            transitGray: '#F2F5F8',
+            harborNavy: '#0F2537',
+            deepCargo: '#18364F',
+            freightTeal: {
+              DEFAULT: '#0D9488',
+              light: '#14B8A6',
+              dark: '#0F766E',
+            },
+            signalAmber: '#F59E0B',
+          },
+          fontFamily: {
+            heading: ['"Space Grotesk"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'freight-glow': '0 0 40px -10px rgba(13, 148, 136, 0.35)',
+            'card-cargo': '0 20px 40px -12px rgba(15, 37, 55, 0.14)',
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fefefe;
-      color: #333;
+      background-color: #F2F5F8;
+      color: #0F2537;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
     }
-    header {
-      background-color: #2e7d32; /* Vert foncé */
-      color: #fdd835; /* Jaune vif */
-      padding: 20px;
-      text-align: center;
+
+    .freight-gradient-text {
+      background: linear-gradient(135deg, #0D9488 0%, #14B8A6 55%, #D97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    header p {
-      margin: 5px 0 0;
-      font-size: 1.2em;
-    }
-    nav {
-      background-color: #fdd835;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #2e7d32;
-    }
-    .hero {
-      background: url('https://i.pinimg.com/550x/a9/df/51/a9df5172829f8c05f5b92f97553d41ae.jpg') no-repeat center center/cover;
-      height: 350px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
-      font-size: 2em;
-    }
-    section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-    section h2 {
-      color: #2e7d32;
-      margin-bottom: 20px;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .gallery img {
-      width: 280px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    footer {
-      background-color: #2e7d32;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-    footer p {
-      margin: 5px 0;
+
+    .glass-panel-cargo {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(13, 148, 136, 0.25);
     }
   </style>
 </head>
-<body>
+<body class="antialiased selection:bg-freightTeal selection:text-white">
 
-  <header>
-    <h1>HUNANIMA</h1>
-    <p>Machines Agricoles Simples et Fiables</p>
+  <!-- STICKY NAVIGATION HEADER -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b border-harborNavy/10 bg-transitGray/95 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Brand Identity -->
+        <a href="#hero" class="flex items-center gap-3.5 group">
+          <div class="w-10 h-10 rounded-xl border border-freightTeal/50 bg-harborNavy flex items-center justify-center shadow-freight-glow group-hover:border-signalAmber transition-colors">
+            <svg class="w-5 h-5 text-freightTeal-light" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 7H15V17H2V7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M15 10H19L22 13V17H15V10Z" stroke="#F59E0B" stroke-width="1.8" stroke-linejoin="round"/>
+              <circle cx="6.5" cy="17.5" r="2" fill="#0F2537" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="18.5" cy="17.5" r="2" fill="#0F2537" stroke="#F59E0B" stroke-width="1.8"/>
+            </svg>
+          </div>
+          <div>
+            <span class="block font-heading text-base sm:text-lg font-bold tracking-wider text-harborNavy leading-none">KELLY88 LOGISTICS</span>
+            <span class="block text-[10px] uppercase tracking-[0.24em] text-freightTeal font-bold mt-1">LLC &bull; Transportation &amp; Freight Support</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-harborNavy/80">
+          <a href="#gallery" class="hover:text-freightTeal transition-colors">Fleet &amp; Operations</a>
+          <a href="#focus" class="hover:text-freightTeal transition-colors">Logistics Scope</a>
+          <a href="#studio" class="hover:text-freightTeal transition-colors">Conyers Hub</a>
+          <a href="#contact" class="hover:text-freightTeal transition-colors">Dispatch</a>
+        </nav>
+
+        <!-- Primary CTA -->
+        <div class="hidden sm:flex items-center gap-4">
+          <a href="tel:+17797596781" class="hidden lg:flex items-center gap-1.5 text-xs text-harborNavy/75 hover:text-harborNavy transition-colors tabular-nums font-semibold">
+            <i data-lucide="phone" class="w-3.5 h-3.5 text-freightTeal"></i>
+            +1 (779) 759-6781
+          </a>
+          <a href="#contact" class="px-5 py-2.5 rounded-lg bg-freightTeal hover:bg-freightTeal-dark text-white font-semibold text-xs uppercase tracking-widest transition-all shadow-md hover:shadow-freight-glow">
+            Request Rate
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2 rounded-lg text-harborNavy hover:text-freightTeal border border-harborNavy/20">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-transitGray border-b border-harborNavy/15 px-6 py-5 space-y-4 shadow-lg">
+      <a href="#gallery" class="block text-sm font-medium text-harborNavy hover:text-freightTeal">Fleet &amp; Operations</a>
+      <a href="#focus" class="block text-sm font-medium text-harborNavy hover:text-freightTeal">Logistics Scope</a>
+      <a href="#studio" class="block text-sm font-medium text-harborNavy hover:text-freightTeal">Conyers Dispatch Hub</a>
+      <a href="#contact" class="block text-sm font-medium text-harborNavy hover:text-freightTeal">Dispatch &amp; Contact</a>
+      <div class="pt-3 border-t border-harborNavy/15 flex flex-col gap-2">
+        <a href="tel:+17797596781" class="text-xs text-harborNavy/80 font-medium">+1 (779) 759-6781</a>
+        <a href="mailto:contact@kelly88logistics.org" class="text-xs text-freightTeal font-semibold">contact@kelly88logistics.org</a>
+      </div>
+    </div>
   </header>
 
-  <nav>
-    <a href="#about">À propos</a>
-    <a href="#gallery">Galerie</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <main>
+    <!-- ===================================================================== -->
+    <!-- SECTION 1: HERO & VISUAL SHOWCASE                                     -->
+    <!-- ===================================================================== -->
+    <section id="hero" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-transitGray">
+      <div class="absolute top-1/4 right-0 w-96 h-96 rounded-full bg-freightTeal/12 blur-[110px] pointer-events-none"></div>
 
-  <div class="hero">
-    <p>Votre partenaire pour des machines agricoles durables</p>
-  </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left Text Column -->
+          <div class="lg:col-span-6 space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-freightTeal/35 bg-white text-xs uppercase tracking-[0.2em] text-freightTeal font-bold shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-signalAmber animate-pulse"></span>
+              Conyers, Georgia &bull; Transportation Support
+            </div>
 
-  <section id="about">
-    <h2>À propos de nous</h2>
-    <p>
-      Chez <strong>HUNANIMA</strong>, nous nous spécialisons dans la fabrication et la distribution de 
-      <strong>machines agricoles simples</strong> pour faciliter le travail des agriculteurs. 
-      Nos solutions combinent <em>durabilité, efficacité et innovation</em> afin de répondre aux besoins de toutes les exploitations.
-    </p>
-  </section>
+            <h1 class="font-heading text-4xl sm:text-5xl lg:text-[54px] font-bold leading-[1.1] tracking-tight text-harborNavy">
+              Reliable Freight &amp; <span class="freight-gradient-text">Transportation</span> Logistics Support.
+            </h1>
 
-  <section id="gallery">
-    <h2>Nos Machines</h2>
-    <div class="gallery">
-      <img src="http://ogden_images.s3.amazonaws.com/www.motherearthnews.com/images/2014/11/22234423/Boaz-Mini-Combine-jpg.jpg" alt="Mini moissonneuse">
-      <img src="https://krs-agro.ru/products/zagotovka_kormov/elho/19/7.jpg" alt="Machine agricole">
-      <img src="https://img.mod-network.net/files/images/6218ac69d37fb/SimpleFarmSilov1000_6222.jpg" alt="Équipement agricole simple">
+            <p class="text-base sm:text-lg text-harborNavy/75 max-w-xl leading-relaxed">
+              <strong class="text-harborNavy font-semibold">KELLY88 LOGISTICS LLC</strong> provides streamlined freight coordination, carrier dispatch support, and supply chain logistics across Georgia and interstate corridors.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a href="#contact" class="inline-flex items-center gap-2 px-7 py-4 rounded-lg bg-freightTeal hover:bg-freightTeal-dark text-white font-semibold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-freight-glow">
+                Request Freight Quote
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <a href="#gallery" class="inline-flex items-center gap-2 px-7 py-4 rounded-lg border border-harborNavy/25 hover:border-freightTeal bg-white text-harborNavy font-semibold text-xs uppercase tracking-wider transition-all">
+                View Operations
+                <i data-lucide="truck" class="w-4 h-4 text-freightTeal"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Image Column -->
+          <div class="lg:col-span-6">
+            <div class="relative rounded-2xl overflow-hidden border border-harborNavy/15 shadow-2xl group">
+              <img 
+                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=85" 
+                alt="Modern freight logistics warehouse and commercial cargo transport" 
+                class="w-full h-[440px] sm:h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-harborNavy/80 via-transparent to-transparent"></div>
+              
+              <div class="absolute bottom-6 left-6 right-6 p-5 glass-panel-cargo rounded-xl flex items-center justify-between">
+                <div>
+                  <span class="text-[11px] uppercase tracking-widest text-freightTeal font-bold block">Georgia Operations Center</span>
+                  <span class="font-heading text-lg font-bold text-harborNavy">4312 Troupe Smith Rd SE, Conyers, GA</span>
+                </div>
+                <div class="w-10 h-10 rounded-lg bg-harborNavy text-freightTeal-light flex items-center justify-center shrink-0">
+                  <i data-lucide="navigation" class="w-5 h-5"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 2: VISUAL GALLERY (LIGHTBOX CAPABLE)                          -->
+    <!-- ===================================================================== -->
+    <section id="gallery" class="py-20 bg-white border-y border-harborNavy/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-2xl mb-12">
+          <span class="text-xs uppercase tracking-[0.25em] text-freightTeal font-bold">01 / Transit Portfolio</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-harborNavy mt-1">
+            Freight Coordination &amp; Supply Chain Flow
+          </h2>
+          <p class="text-harborNavy/70 text-sm sm:text-base mt-2">
+            Click any operational photograph to inspect in full resolution.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Card 1 -->
+          <div class="group relative rounded-2xl overflow-hidden border border-harborNavy/15 shadow-card-cargo cursor-pointer lightbox-trigger" data-img="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=85" data-title="Over-the-Road Commercial Freight & Dispatch">
+            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=85" alt="Commercial semi-truck on interstate highway" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-harborNavy/85 via-harborNavy/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="text-[10px] uppercase tracking-widest text-signalAmber font-bold">Linehaul &amp; Regional</span>
+              <h3 class="font-heading text-xl font-bold mt-0.5">Interstate Freight Coordination</h3>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="group relative rounded-2xl overflow-hidden border border-harborNavy/15 shadow-card-cargo cursor-pointer lightbox-trigger" data-img="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=85" data-title="Cross-Docking & Warehousing Support">
+            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=85" alt="Palletized freight inside distribution warehouse" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-harborNavy/85 via-harborNavy/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="text-[10px] uppercase tracking-widest text-signalAmber font-bold">Warehousing &amp; Staging</span>
+              <h3 class="font-heading text-xl font-bold mt-0.5">Cargo Handling &amp; Distribution</h3>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="group relative rounded-2xl overflow-hidden border border-harborNavy/15 shadow-card-cargo cursor-pointer lightbox-trigger" data-img="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=85" data-title="Intermodal & Port Drayage Support">
+            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=85" alt="Intermodal shipping containers and freight terminal" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-harborNavy/85 via-harborNavy/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="text-[10px] uppercase tracking-widest text-signalAmber font-bold">Supply Chain</span>
+              <h3 class="font-heading text-xl font-bold mt-0.5">Intermodal &amp; Terminal Logistics</h3>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 3: INTERACTIVE LOGISTICS CAPABILITIES                         -->
+    <!-- ===================================================================== -->
+    <section id="focus" class="py-20 bg-transitGray">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-2xl mb-12">
+          <span class="text-xs uppercase tracking-[0.25em] text-freightTeal font-bold">02 / Core Services</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-harborNavy mt-1">
+            Transportation &amp; Logistics Support Divisions
+          </h2>
+          <p class="text-harborNavy/70 text-sm sm:text-base mt-2">
+            Select a service area below to inspect our operational capabilities.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left Tabs -->
+          <div class="lg:col-span-5 space-y-3">
+            <button type="button" data-focus="0" class="focus-tab w-full text-left p-5 rounded-xl border border-freightTeal bg-white shadow-sm transition-all flex items-center justify-between group">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-freightTeal font-bold">Division I</span>
+                <h3 class="font-heading text-xl font-bold text-harborNavy mt-0.5">Freight Brokerage &amp; Load Dispatch</h3>
+              </div>
+              <i data-lucide="chevron-right" class="w-5 h-5 text-freightTeal"></i>
+            </button>
+
+            <button type="button" data-focus="1" class="focus-tab w-full text-left p-5 rounded-xl border border-harborNavy/15 bg-white/70 hover:border-freightTeal/60 transition-all flex items-center justify-between group">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-harborNavy/50 group-hover:text-freightTeal font-bold">Division II</span>
+                <h3 class="font-heading text-xl font-bold text-harborNavy mt-0.5">Transportation Support &amp; Fleet Ops</h3>
+              </div>
+              <i data-lucide="chevron-right" class="w-5 h-5 text-harborNavy/40 group-hover:text-freightTeal"></i>
+            </button>
+
+            <button type="button" data-focus="2" class="focus-tab w-full text-left p-5 rounded-xl border border-harborNavy/15 bg-white/70 hover:border-freightTeal/60 transition-all flex items-center justify-between group">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-harborNavy/50 group-hover:text-freightTeal font-bold">Division III</span>
+                <h3 class="font-heading text-xl font-bold text-harborNavy mt-0.5">Warehousing &amp; Supply Chain Staging</h3>
+              </div>
+              <i data-lucide="chevron-right" class="w-5 h-5 text-harborNavy/40 group-hover:text-freightTeal"></i>
+            </button>
+          </div>
+
+          <!-- Right Display Card with Image & Details -->
+          <div class="lg:col-span-7 bg-white rounded-2xl border border-harborNavy/15 p-8 shadow-card-cargo relative overflow-hidden">
+            <div id="focus-content" class="space-y-6">
+              <img id="focus-img" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1000&q=85" alt="Freight Dispatch" class="w-full h-64 object-cover rounded-xl border border-harborNavy/10">
+              <div>
+                <span id="focus-tag" class="text-xs uppercase tracking-widest text-freightTeal font-bold">Freight Brokerage &amp; Load Dispatch</span>
+                <h3 id="focus-title" class="font-heading text-2xl sm:text-3xl font-bold text-harborNavy mt-1">End-to-End Route Planning &amp; Carrier Coordination</h3>
+              </div>
+              <p id="focus-desc" class="text-harborNavy/75 text-sm sm:text-base leading-relaxed">
+                Matching commercial shippers with vetted carriers for dry van, flatbed, and expedited regional deliveries with real-time milestone tracking and transparent documentation.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 4: CONYERS HUB & OPERATIONAL STANDARDS                        -->
+    <!-- ===================================================================== -->
+    <section id="studio" class="py-20 bg-white border-y border-harborNavy/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs uppercase tracking-[0.25em] text-freightTeal font-bold">03 / Regional Hub</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-harborNavy mt-1">
+            Conyers Headquarters &amp; Transit Standards
+          </h2>
+          <p class="text-harborNavy/70 text-sm sm:text-base mt-2">
+            Strategically positioned along the I-20 corridor in Rockdale County, Georgia.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-2xl border border-harborNavy/15 bg-transitGray p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-harborNavy text-freightTeal-light flex items-center justify-center mb-4">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-heading text-xl font-bold text-harborNavy">Principal Base</h3>
+              <p class="text-sm text-harborNavy/75 mt-2">
+                4312 Troupe Smith Rd SE<br>Conyers, GA 30094-4012, United States
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-harborNavy/10 text-xs text-freightTeal font-bold uppercase tracking-wider">
+              Rockdale County, Georgia
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-harborNavy/15 bg-transitGray p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-harborNavy text-freightTeal-light flex items-center justify-center mb-4">
+                <i data-lucide="shield-check" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-heading text-xl font-bold text-harborNavy">Private Independent</h3>
+              <p class="text-sm text-harborNavy/75 mt-2">
+                Dedicated accountability, strict DOT safety alignment, and dependable chain-of-custody verification for every shipment.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-harborNavy/10 text-xs text-freightTeal font-bold uppercase tracking-wider">
+              NAICS 4889 &bull; Transportation Support
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-harborNavy/15 bg-transitGray p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-harborNavy text-freightTeal-light flex items-center justify-center mb-4">
+                <i data-lucide="clock" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-heading text-xl font-bold text-harborNavy">Responsive Dispatch</h3>
+              <p class="text-sm text-harborNavy/75 mt-2">
+                Direct communication with our Conyers logistics coordinators for rate quotes, load scheduling, and transit updates.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-harborNavy/10 text-xs text-freightTeal font-bold uppercase tracking-wider">
+              Direct Carrier &amp; Shipper Desk
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 5: CONTACT & DISPATCH INQUIRY                                 -->
+    <!-- ===================================================================== -->
+    <section id="contact" class="py-20 bg-transitGray relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Left Info Column -->
+          <div class="lg:col-span-5 space-y-6">
+            <div>
+              <span class="text-xs uppercase tracking-[0.25em] text-freightTeal font-bold">04 / Dispatch &amp; Quotes</span>
+              <h2 class="font-heading text-3xl sm:text-4xl font-bold text-harborNavy mt-1">
+                Schedule Freight Support.
+              </h2>
+              <p class="text-harborNavy/75 text-sm sm:text-base mt-2 leading-relaxed">
+                Contact our Conyers logistics desk with your origin, destination, freight dimensions, and target delivery window.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <div class="p-4 rounded-xl bg-white border border-harborNavy/15 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-harborNavy text-freightTeal-light flex items-center justify-center">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <span class="text-[10px] uppercase tracking-wider text-harborNavy/60 block">Logistics Desk Email</span>
+                    <a href="mailto:contact@kelly88logistics.org" class="text-harborNavy font-semibold text-sm hover:text-freightTeal break-all">
+                      contact@kelly88logistics.org
+                    </a>
+                  </div>
+                </div>
+                <button type="button" id="copy-email-btn" title="Copy Email" class="p-2 rounded-lg border border-harborNavy/15 hover:border-freightTeal text-harborNavy/70 hover:text-freightTeal transition-colors">
+                  <i data-lucide="copy" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+              <div class="p-4 rounded-xl bg-white border border-harborNavy/15 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-harborNavy text-freightTeal-light flex items-center justify-center">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-[10px] uppercase tracking-wider text-harborNavy/60 block">Direct Dispatch Line</span>
+                  <a href="tel:+17797596781" class="text-harborNavy font-semibold text-base hover:text-freightTeal tabular-nums">
+                    +1 (779) 759-6781
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Form Column -->
+          <div class="lg:col-span-7">
+            <div class="rounded-2xl border border-harborNavy/15 bg-white p-8 shadow-card-cargo">
+              <h3 class="font-heading text-2xl font-bold text-harborNavy mb-2">Freight &amp; Logistics Quote Request</h3>
+              <p class="text-xs text-harborNavy/60 mb-6">Routed directly to KELLY88 LOGISTICS LLC.</p>
+
+              <form id="inquiry-form" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="name" class="block text-xs uppercase tracking-wider text-harborNavy/75 font-bold mb-1.5">Full Name / Company *</label>
+                    <input type="text" id="name" required placeholder="e.g., Marcus Reid / Reid Supply" class="w-full px-4 py-3 rounded-lg bg-transitGray border border-harborNavy/15 text-harborNavy text-sm placeholder-harborNavy/35 focus:outline-none focus:border-freightTeal">
+                  </div>
+                  <div>
+                    <label for="email" class="block text-xs uppercase tracking-wider text-harborNavy/75 font-bold mb-1.5">Email Address *</label>
+                    <input type="email" id="email" required placeholder="dispatch@company.com" class="w-full px-4 py-3 rounded-lg bg-transitGray border border-harborNavy/15 text-harborNavy text-sm placeholder-harborNavy/35 focus:outline-none focus:border-freightTeal">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="message" class="block text-xs uppercase tracking-wider text-harborNavy/75 font-bold mb-1.5">Shipment Details &amp; Lane *</label>
+                  <textarea id="message" rows="4" required placeholder="Specify pickup/delivery cities, pallet count or weight, equipment type, and target date..." class="w-full px-4 py-3 rounded-lg bg-transitGray border border-harborNavy/15 text-harborNavy text-sm placeholder-harborNavy/35 focus:outline-none focus:border-freightTeal"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-lg bg-freightTeal hover:bg-freightTeal-dark text-white font-semibold text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2">
+                  <span>Submit Logistics Inquiry</span>
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+              </form>
+
+              <!-- Success State -->
+              <div id="form-success" class="hidden text-center py-8 space-y-3">
+                <div class="w-12 h-12 rounded-full bg-freightTeal/20 border border-freightTeal flex items-center justify-center text-freightTeal mx-auto">
+                  <i data-lucide="check" class="w-6 h-6"></i>
+                </div>
+                <h4 class="font-heading text-2xl font-bold text-harborNavy">Dispatch Request Prepared</h4>
+                <p class="text-xs text-harborNavy/75 max-w-sm mx-auto">
+                  Thank you, <span id="confirm-name" class="font-semibold text-harborNavy"></span>. Your freight inquiry has been formatted for <span class="text-freightTeal font-semibold">contact@kelly88logistics.org</span>.
+                </p>
+                <div class="pt-2">
+                  <a id="mailto-fallback" href="mailto:contact@kelly88logistics.org" class="px-5 py-2.5 rounded-lg bg-freightTeal text-white text-xs font-semibold uppercase tracking-wider inline-block">
+                    Open in Mail Client
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-harborNavy text-transitGray/75 py-12 text-xs border-t border-freightTeal/25">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10">
+        <div>
+          <span class="font-heading text-lg font-bold text-white block">KELLY88 LOGISTICS LLC</span>
+          <span class="text-[10px] uppercase tracking-widest text-freightTeal-light block mt-0.5">Transportation Support &amp; Freight Logistics</span>
+        </div>
+        <div class="text-center md:text-right">
+          <p>4312 Troupe Smith Rd SE, Conyers, GA 30094-4012</p>
+          <p class="mt-1">Email: <a href="mailto:contact@kelly88logistics.org" class="text-freightTeal-light hover:underline">contact@kelly88logistics.org</a> | Phone: <a href="tel:+17797596781" class="text-white hover:underline tabular-nums">+1 (779) 759-6781</a></p>
+        </div>
+      </div>
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-transitGray/50">
+        <p>&copy; <span id="current-year"></span> KELLY88 LOGISTICS LLC. All Rights Reserved.</p>
+        <p>Private independent transportation logistics establishment.</p>
+      </div>
     </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contactez-nous</h2>
-    <p><strong>Email :</strong> admin@tyusex.shop</p>
-    <p><strong>Téléphone :</strong> +33 7 38 50 26 36</p>
-    <p><strong>Adresse :</strong> Avenue Baratier, Montmorency, 95160, France</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 HUNANIMA - Tous droits réservés.</p>
   </footer>
 
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox-modal" class="hidden fixed inset-0 z-50 bg-harborNavy/95 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="relative max-w-4xl w-full">
+      <button type="button" id="lightbox-close" class="absolute -top-12 right-0 text-white hover:text-freightTeal-light p-2">
+        <i data-lucide="x" class="w-8 h-8"></i>
+      </button>
+      <img id="lightbox-img" src="" alt="Expanded View" class="w-full max-h-[80vh] object-contain rounded-xl border border-freightTeal/40">
+      <p id="lightbox-caption" class="text-white text-center font-heading text-xl mt-4"></p>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-4 py-3 rounded-lg bg-harborNavy border border-freightTeal text-white text-xs font-semibold uppercase tracking-wider shadow-lg">
+    Email copied to clipboard
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    lucide.createIcons();
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Lightbox Functionality
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.lightbox-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        lightboxImg.src = trigger.dataset.img;
+        lightboxCaption.textContent = trigger.dataset.title;
+        lightboxModal.classList.remove('hidden');
+      });
+    });
+
+    lightboxClose.addEventListener('click', () => lightboxModal.classList.add('hidden'));
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) lightboxModal.classList.add('hidden');
+    });
+
+    // Interactive Focus Tabs
+    const focusData = [
+      {
+        tag: 'Freight Brokerage & Load Dispatch',
+        title: 'End-to-End Route Planning & Carrier Coordination',
+        desc: 'Matching commercial shippers with vetted carriers for dry van, flatbed, and expedited regional deliveries with real-time milestone tracking and transparent documentation.',
+        img: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1000&q=85'
+      },
+      {
+        tag: 'Transportation Support & Fleet Ops',
+        title: 'Dedicated Back-Office & Logistics Administration',
+        desc: 'Comprehensive freight documentation, BOL auditing, carrier compliance verification, and route optimization supporting smooth daily transit operations.',
+        img: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=85'
+      },
+      {
+        tag: 'Warehousing & Supply Chain Staging',
+        title: 'Cross-Docking, Consolidation & Regional Distribution',
+        desc: 'Coordinated pallet staging, short-term freight consolidation, and last-mile delivery scheduling across the Metro Atlanta and East Georgia corridors.',
+        img: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1000&q=85'
+      }
+    ];
+
+    const focusTabs = document.querySelectorAll('.focus-tab');
+    const focusImg = document.getElementById('focus-img');
+    const focusTag = document.getElementById('focus-tag');
+    const focusTitle = document.getElementById('focus-title');
+    const focusDesc = document.getElementById('focus-desc');
+
+    focusTabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        focusTabs.forEach(t => {
+          t.classList.remove('border-freightTeal', 'bg-white', 'shadow-sm');
+          t.classList.add('border-harborNavy/15', 'bg-white/70');
+          t.querySelector('span').classList.remove('text-freightTeal');
+          t.querySelector('span').classList.add('text-harborNavy/50');
+          t.querySelector('i').classList.remove('text-freightTeal');
+          t.querySelector('i').classList.add('text-harborNavy/40');
+        });
+
+        tab.classList.remove('border-harborNavy/15', 'bg-white/70');
+        tab.classList.add('border-freightTeal', 'bg-white', 'shadow-sm');
+        tab.querySelector('span').classList.add('text-freightTeal');
+        tab.querySelector('i').classList.add('text-freightTeal');
+
+        const data = focusData[index];
+        focusImg.src = data.img;
+        focusTag.textContent = data.tag;
+        focusTitle.textContent = data.title;
+        focusDesc.textContent = data.desc;
+      });
+    });
+
+    // Copy Email Toast
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+    const toast = document.getElementById('toast');
+    copyEmailBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText('contact@kelly88logistics.org').then(() => {
+        toast.classList.remove('hidden');
+        setTimeout(() => toast.classList.add('hidden'), 2500);
+      });
+    });
+
+    // Inquiry Form Submission
+    const inquiryForm = document.getElementById('inquiry-form');
+    const formSuccess = document.getElementById('form-success');
+    const confirmName = document.getElementById('confirm-name');
+    const mailtoFallback = document.getElementById('mailto-fallback');
+
+    inquiryForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      confirmName.textContent = name;
+      const subject = encodeURIComponent(`Freight & Logistics Inquiry from ${name}`);
+      const body = encodeURIComponent(`Name/Company: ${name}\nEmail: ${email}\n\nShipment Details:\n${message}`);
+      mailtoFallback.href = `mailto:contact@kelly88logistics.org?subject=${subject}&body=${body}`;
+
+      inquiryForm.classList.add('hidden');
+      formSuccess.classList.remove('hidden');
+    });
+  </script>
 </body>
 </html>
